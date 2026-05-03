@@ -48,12 +48,6 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        brand: {
-          orange: "#ea580c",
-          dark: "#121212",
-          darker: "#0a0a0a",
-          light: "#f5f5f5",
-        }
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -64,8 +58,6 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glow: "0 0 30px rgba(234, 88, 12, 0.3)",
-        "glow-lg": "0 0 60px rgba(234, 88, 12, 0.4)",
       },
       keyframes: {
         "accordion-down": {
@@ -80,34 +72,11 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
-        "slide-up": {
-          from: { transform: "translateY(20px)", opacity: "0" },
-          to: { transform: "translateY(0)", opacity: "1" },
-        },
-        "slide-down": {
-          from: { transform: "translateY(-20px)", opacity: "0" },
-          to: { transform: "translateY(0)", opacity: "1" },
-        },
-        "fade-in": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        "scale-in": {
-          from: { transform: "scale(0.95)", opacity: "0" },
-          to: { transform: "scale(1)", opacity: "1" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "slide-up": "slide-up 0.5s ease-out",
-        "slide-down": "slide-down 0.5s ease-out",
-        "fade-in": "fade-in 0.4s ease-out",
-        "scale-in": "scale-in 0.3s ease-out",
-      },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },
