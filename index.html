@@ -2,8 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0f1a14" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="The Canning House" />
+    <meta name="description" content="The Canning House - Charming Authentic Cuisine. Brunch, salads, burgers, sandwiches & more." />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="icon" type="image/png" href="/icons/icon-192x192.png" />
     <title>The Canning House</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('SW registered'))
+            .catch(() => console.log('SW failed'));
+        });
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

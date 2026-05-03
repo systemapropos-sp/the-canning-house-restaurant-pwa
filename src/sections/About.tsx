@@ -1,115 +1,52 @@
-import { MapPin, Phone, Clock, Star, Truck, ChefHat, Award } from 'lucide-react';
+import { Leaf, Heart, Clock } from 'lucide-react';
 
 const features = [
-  {
-    icon: ChefHat,
-    title: 'Made Fresh Daily',
-    description: 'Every burger is smashed to order, every wing is hand-tossed in our signature sauces.',
-  },
-  {
-    icon: Star,
-    title: 'Premium Ingredients',
-    description: 'We use only the finest Angus beef, fresh produce, and house-made sauces.',
-  },
-  {
-    icon: Truck,
-    title: 'Fast & Reliable',
-    description: 'Quick pickup and local delivery so your food arrives hot and fresh.',
-  },
-  {
-    icon: Award,
-    title: 'Local Favorite',
-    description: 'Voted best burgers in Wyoming by our amazing community of food lovers.',
-  },
+  { icon: Leaf, title: 'Farm-to-Table', desc: 'We source fresh, local ingredients to craft dishes that celebrate the seasons.' },
+  { icon: Heart, title: 'Made with Love', desc: 'Every dish is handcrafted from scratch with passion and attention to detail.' },
+  { icon: Clock, title: 'Brunch All Day', desc: 'Your favorite brunch dishes served whenever the craving strikes.' },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-brand-darker">
+    <section id="about" className="py-20 bg-brand-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-              About Us
-            </span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Our Story</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3 mb-6">
-              Bold Flavors,{' '}
-              <span className="text-primary">Big Attitude</span>
+              Where <span className="text-primary">Good Food</span><br />Meets Good Company
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-6">
-              At BOOYAH! Wyoming, we do not just serve food — we serve an experience. 
-              Our smash burgers are pressed to perfection, our wings are tossed in 
-              15+ house-made sauces, and our hand-spun milkshakes are the stuff of legend.
+            <p className="text-white/50 text-lg leading-relaxed mb-6">
+              The Canning House is more than a restaurant — it is a gathering place. 
+              We believe in the power of a shared meal, the comfort of elevated classics, 
+              and the joy of discovering something new on your plate.
             </p>
-            <p className="text-white/60 text-lg leading-relaxed mb-8">
-              Located in the heart of Wyoming at 2022 Wyoming Ave, we are open 7 days 
-              a week to satisfy your cravings. Whether you are here for lunch, dinner, 
-              or a late-night shake, we have got you covered.
+            <p className="text-white/50 text-lg leading-relaxed mb-8">
+              From our signature fried chicken & waffles to our carefully crafted sandwiches, 
+              every item on our menu is designed to delight. Whether you are here for a 
+              leisurely brunch or a quick bite, you are family.
             </p>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((feature) => {
-                const Icon = feature.icon;
+            <div className="grid sm:grid-cols-3 gap-4">
+              {features.map(f => {
+                const Icon = f.icon;
                 return (
-                  <div
-                    key={feature.title}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-sm">{feature.title}</h3>
-                      <p className="text-white/40 text-xs mt-1">{feature.description}</p>
-                    </div>
+                  <div key={f.title} className="p-4 rounded-xl bg-white/5 border border-white/5">
+                    <Icon className="w-6 h-6 text-primary mb-2" />
+                    <h3 className="text-white font-bold text-sm">{f.title}</h3>
+                    <p className="text-white/30 text-xs mt-1">{f.desc}</p>
                   </div>
                 );
               })}
             </div>
           </div>
-
-          {/* Right - Location Card */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-card border border-white/5">
-              {/* Simulated Map Background */}
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-brand-dark flex items-center justify-center relative">
-                <div className="absolute inset-0 opacity-20">
-                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                  </svg>
-                </div>
-                <div className="relative z-10 text-center p-8">
-                  <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6 shadow-glow">
-                    <MapPin className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-white font-black text-2xl mb-2">Find Us</h3>
-                  <p className="text-white/60 text-lg mb-1">2022 Wyoming Ave</p>
-                  <p className="text-white/40 text-sm">Wyoming, PA 18644</p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+              <img src="/images/brunch.jpg" alt="The Canning House Food" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
             </div>
-
-            {/* Info Cards */}
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-card border border-white/5 text-center">
-                <Clock className="w-6 h-6 text-primary mx-auto mb-2" />
-                <p className="text-white font-bold text-sm">Open 7 Days</p>
-                <p className="text-white/40 text-xs">11AM - 9PM</p>
-              </div>
-              <a
-                href="tel:+15703332222"
-                className="p-4 rounded-xl bg-card border border-white/5 text-center hover:border-primary/30 transition-colors"
-              >
-                <Phone className="w-6 h-6 text-primary mx-auto mb-2" />
-                <p className="text-white font-bold text-sm">Call Us</p>
-                <p className="text-white/40 text-xs">(570) 333-2222</p>
-              </a>
+            <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 p-4 sm:p-6 rounded-xl bg-primary text-white">
+              <p className="text-3xl sm:text-4xl font-black">50+</p>
+              <p className="text-white/70 text-xs sm:text-sm">Unique Menu Items</p>
             </div>
           </div>
         </div>
